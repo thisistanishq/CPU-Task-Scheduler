@@ -10,7 +10,8 @@ It is designed for educational purposes, interview preparation, and in-depth und
 ### Offline Scheduling Algorithms
 - First-Come-First-Serve (FCFS)  
 - Round Robin (RR)  
-- Multi-Level Feedback Queue (MLFQ)  
+- Multi-Level Feedback Queue (MLFQ)
+- Priority Scheduling (Non-preemptive)  
 
 Offline schedulers simulate fixed process lists for deterministic analysis and testing.
 
@@ -27,9 +28,16 @@ Online schedulers mimic real-time systems with processes arriving during executi
 ### Running the Simulator
 
 Clone the repository and simply run: ./main (main.cpp)
+ 
+`g++ main.cpp -std=c++17 -o main`
+`./main`
 
+### Running Unit Tests
 
-* No explicit build steps required if using modern IDE setups or `g++ main.cpp -std=c++17 -o main` manually.
+To verify the correctness of the scheduling algorithms:
+
+`g++ tests.cpp -std=c++17 -o tests`
+`./tests`
 
 ### Interactive Testing
 
@@ -45,6 +53,7 @@ Clone the repository and simply run: ./main (main.cpp)
 - Uses POSIX system calls (`fork`, `waitpid`, `kill`) for realistic process simulation.
 - Adaptive burst time prediction enhances Shortest Job First scheduling.
 - Multi-Level Feedback Queue scheduler with priority boost and aging.
+- Priority Scheduling with higher numerical priority values executing first.
 - Real-time command polling via non-blocking stdin.
 - Detailed metrics and CSV output for performance benchmarking.
 
